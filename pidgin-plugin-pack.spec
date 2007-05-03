@@ -11,7 +11,7 @@ Summary:    Plugin Pack for libpurple and derived IM clients
 Name:       pidgin-plugin-pack
 Version:    %version
 
-Release:    %mkrel 0.%prerel.1
+Release:    %mkrel 0.%prerel.2
 License:    GPL
 Group:      Networking/Instant messaging
 
@@ -19,13 +19,22 @@ URL:        http://plugins.guifications.org/
 Source0:    %{fname}.tar.bz2
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: perl-XML-Parser
-BuildRequires: xmms-devel
 BuildRequires: pidgin-devel >= %{pidgin_major_ver}.%{pidgin_minor_ver}, pidgin-devel < %{pidgin_next_major_ver}
 BuildRequires: gtk2-devel
 Requires:   pidgin >= %{pidgin_major_ver}.%{pidgin_build_minor_ver}, pidgin < %{pidgin_next_major_ver}
 
 %description
 Additional plugins for Pidgin.
+
+%package -n pidgin-xmms
+Group: Networking/Instant messaging
+Summary: Xmms control plugin for Pidgin
+Requires:   pidgin >= %{pidgin_major_ver}.%{pidgin_build_minor_ver}, pidgin < %{pidgin_next_major_ver}
+Requires: xmms
+BuildRequires: xmms-devel
+
+%description -n pidgin-xmms
+This is a plugin for Pidgin to control the Xmms music player.
 
 %prep
 %setup -q -n %fname
@@ -61,7 +70,6 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/pidgin/plonkers.so
 %_libdir/pidgin/sepandtab.so
 %_libdir/pidgin/xchat-chats.so
-%_libdir/pidgin/xmmsremote.so
 %_libdir/purple-2/autoreply.so
 %_libdir/purple-2/bash.so
 %_libdir/purple-2/dice.so
@@ -74,4 +82,9 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/purple-2/simfix.so
 %_libdir/purple-2/slashexec.so
 %_libdir/purple-2/sslinfo.so
-%{_datadir}/pixmaps/pidgin/plugin_pack
+
+%files -n pidgin-xmms
+%defattr(-,root,root,-)
+%_libdir/pidgin/xmmsremote.so
+%dir %{_datadir}/pixmaps/pidgin/plugin_pack
+%{_datadir}/pixmaps/pidgin/plugin_pack/xmmsremote/
