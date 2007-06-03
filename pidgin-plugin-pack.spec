@@ -1,7 +1,6 @@
 %define oname purple-plugin_pack
 %define version 1.0
-%define prerel beta7
-%define fname %oname-%version%prerel
+%define fname %oname-%version
 %define pidgin_major_ver 2
 %define pidgin_minor_ver 0
 %define pidgin_next_major_ver %(echo $((%{pidgin_major_ver}+1)))
@@ -11,7 +10,7 @@ Summary:    Plugin Pack for libpurple and derived IM clients
 Name:       pidgin-plugin-pack
 Version:    %version
 
-Release:    %mkrel 0.%prerel.2
+Release:    %mkrel 1
 License:    GPL
 Group:      Networking/Instant messaging
 
