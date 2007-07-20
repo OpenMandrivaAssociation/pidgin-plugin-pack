@@ -21,7 +21,7 @@ BuildRequires: perl-XML-Parser
 BuildRequires: pidgin-devel >= %{pidgin_major_ver}.%{pidgin_minor_ver}, pidgin-devel < %{pidgin_next_major_ver}
 BuildRequires: gtk2-devel
 BuildRequires: gtkspell-devel
-BuildRequires: libtalkfilters-devel
+BuildRequires: talkfilters-devel
 Requires:   pidgin >= %{pidgin_major_ver}.%{pidgin_build_minor_ver}, pidgin < %{pidgin_next_major_ver}
 
 
