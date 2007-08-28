@@ -1,8 +1,8 @@
 %define oname purple-plugin_pack
-%define version 2.0.0
+%define version 2.1.1
 %define fname %oname-%version
 %define pidgin_major_ver 2
-%define pidgin_minor_ver 0
+%define pidgin_minor_ver 1
 %define pidgin_next_major_ver %(echo $((%{pidgin_major_ver}+1)))
 %define pidgin_build_minor_ver %(if $([ -x %{_bindir}/pkg-config ] && pkg-config --exists pidgin); then pkg-config --modversion pidgin | awk -F. '{ print $2 }'; else echo 0; fi)
 
@@ -61,6 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog
 %_libdir/pidgin/album.so
 %_libdir/pidgin/blistops.so
+%_libdir/pidgin/convbadger.so
 %_libdir/pidgin/difftopic.so
 %_libdir/pidgin/gRIM.so
 %_libdir/pidgin/hideconv.so
@@ -84,6 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/purple-2/ignore.so
 %_libdir/purple-2/irchelper.so
 %_libdir/purple-2/irc-more.so
+%_libdir/purple-2/libsnpp.so
 %_libdir/purple-2/listhandler.so
 %_libdir/purple-2/oldlogger.so
 %_libdir/purple-2/showoffline.so
