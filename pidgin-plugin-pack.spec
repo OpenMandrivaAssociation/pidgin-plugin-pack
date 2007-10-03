@@ -2,7 +2,7 @@
 %define version 2.1.1
 %define fname %oname-%version
 %define pidgin_major_ver 2
-%define pidgin_minor_ver 1
+%define pidgin_minor_ver 2
 %define pidgin_next_major_ver %(echo $((%{pidgin_major_ver}+1)))
 %define pidgin_build_minor_ver %(if $([ -x %{_bindir}/pkg-config ] && pkg-config --exists pidgin); then pkg-config --modversion pidgin | awk -F. '{ print $2 }'; else echo 0; fi)
 
@@ -10,7 +10,7 @@ Summary:    Plugin Pack for libpurple and derived IM clients
 Name:       pidgin-plugin-pack
 Version:    %version
 
-Release:    %mkrel 1
+Release:    %mkrel 2
 License:    GPL
 Group:      Networking/Instant messaging
 
