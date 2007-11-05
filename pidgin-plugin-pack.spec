@@ -1,5 +1,5 @@
 %define oname purple-plugin_pack
-%define version 2.1.1
+%define version 2.2.0
 %define fname %oname-%version
 %define pidgin_major_ver 2
 %define pidgin_minor_ver 2
@@ -10,7 +10,7 @@ Summary:    Plugin Pack for libpurple and derived IM clients
 Name:       pidgin-plugin-pack
 Version:    %version
 
-Release:    %mkrel 2
+Release:    %mkrel 1
 License:    GPL
 Group:      Networking/Instant messaging
 
@@ -64,7 +64,7 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/pidgin/convbadger.so
 %_libdir/pidgin/difftopic.so
 %_libdir/pidgin/gRIM.so
-%_libdir/pidgin/hideconv.so
+%_libdir/pidgin/infopane.so
 %_libdir/pidgin/irssi.so
 %_libdir/pidgin/lastseen.so
 %_libdir/pidgin/mystatusbox.so
@@ -74,10 +74,11 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/pidgin/sepandtab.so
 %_libdir/pidgin/switchspell.so
 %_libdir/pidgin/talkfilters.so
+%_libdir/pidgin/timelog.so
 %_libdir/pidgin/xchat-chats.so
-%_libdir/purple-2/autorejoin.so
 %_libdir/purple-2/autoreply.so
 %_libdir/purple-2/bash.so
+%_libdir/purple-2/dewysiwygification.so
 %_libdir/purple-2/dice.so
 %_libdir/purple-2/eight_ball.so
 %_libdir/purple-2/flip.so
