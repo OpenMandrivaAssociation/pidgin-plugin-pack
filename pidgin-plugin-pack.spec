@@ -10,12 +10,14 @@ Summary:    Plugin Pack for libpurple and derived IM clients
 Name:       pidgin-plugin-pack
 Version:    %version
 
-Release:    %mkrel 1
+Release:    %mkrel 2
 License:    GPL
 Group:      Networking/Instant messaging
 
 URL:        http://plugins.guifications.org/
 Source0:    %{fname}.tar.bz2
+# gw this fixes an undefined symbol in the timelog plugin
+Patch: purple-plugin_pack-2.2.0-missing-include.patch
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: perl-XML-Parser
 BuildRequires: pidgin-devel >= %{pidgin_major_ver}.%{pidgin_minor_ver}, pidgin-devel < %{pidgin_next_major_ver}
@@ -40,6 +42,7 @@ This is a plugin for Pidgin to control the Xmms music player.
 
 %prep
 %setup -q -n %fname
+%patch -p1
 
 %build
 %configure2_5x
