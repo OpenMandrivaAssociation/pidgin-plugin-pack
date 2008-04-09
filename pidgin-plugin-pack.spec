@@ -1,8 +1,8 @@
 %define oname purple-plugin_pack
-%define version 2.2.0
+%define version 2.3.0
 %define fname %oname-%version
 %define pidgin_major_ver 2
-%define pidgin_minor_ver 2
+%define pidgin_minor_ver 4
 %define pidgin_next_major_ver %(echo $((%{pidgin_major_ver}+1)))
 %define pidgin_build_minor_ver %(if $([ -x %{_bindir}/pkg-config ] && pkg-config --exists pidgin); then pkg-config --modversion pidgin | awk -F. '{ print $2 }'; else echo 0; fi)
 
@@ -10,14 +10,12 @@ Summary:    Plugin Pack for libpurple and derived IM clients
 Name:       pidgin-plugin-pack
 Version:    %version
 
-Release:    %mkrel 2
+Release:    %mkrel 1
 License:    GPL
 Group:      Networking/Instant messaging
 
 URL:        http://plugins.guifications.org/
 Source0:    %{fname}.tar.bz2
-# gw this fixes an undefined symbol in the timelog plugin
-Patch: purple-plugin_pack-2.2.0-missing-include.patch
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: perl-XML-Parser
 BuildRequires: pidgin-devel >= %{pidgin_major_ver}.%{pidgin_minor_ver}, pidgin-devel < %{pidgin_next_major_ver}
@@ -42,7 +40,6 @@ This is a plugin for Pidgin to control the Xmms music player.
 
 %prep
 %setup -q -n %fname
-%patch -p1
 
 %build
 %configure2_5x
@@ -62,10 +59,12 @@ rm -rf $RPM_BUILD_ROOT
 %files -f plugin_pack.lang
 %defattr(-,root,root,-)
 %doc AUTHORS ChangeLog
+%{_datadir}/pixmaps/pidgin/protocols/*/napster.png
 %_libdir/pidgin/album.so
 %_libdir/pidgin/blistops.so
 %_libdir/pidgin/convbadger.so
 %_libdir/pidgin/difftopic.so
+%_libdir/pidgin/enhancedhist.so
 %_libdir/pidgin/gRIM.so
 %_libdir/pidgin/infopane.so
 %_libdir/pidgin/irssi.so
@@ -91,6 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/purple-2/irc-more.so
 %_libdir/purple-2/libsnpp.so
 %_libdir/purple-2/listhandler.so
+%_libdir/purple-2/napster.so
 %_libdir/purple-2/oldlogger.so
 %_libdir/purple-2/showoffline.so
 %_libdir/purple-2/simfix.so
