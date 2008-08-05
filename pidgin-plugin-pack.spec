@@ -18,6 +18,7 @@ URL:        http://plugins.guifications.org/
 Source0:    %{fname}.tar.bz2
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: intltool
+BuildRequires: python
 BuildRequires: pidgin-devel >= %{pidgin_major_ver}.%{pidgin_minor_ver}, pidgin-devel < %{pidgin_next_major_ver}
 BuildRequires: gtk2-devel
 BuildRequires: gtkspell-devel
