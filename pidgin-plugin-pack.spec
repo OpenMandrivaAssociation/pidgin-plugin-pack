@@ -1,5 +1,5 @@
 %define oname purple-plugin_pack
-%define version 2.4.0
+%define version 2.5.1
 %define fname %oname-%version
 %define pidgin_major_ver 2
 %define pidgin_minor_ver 4
@@ -42,15 +42,16 @@ This is a plugin for Pidgin to control the Xmms music player.
 %setup -q -n %fname
 
 %build
-%configure2_5x
+%configure2_5x --disable-static
 %make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/purple-2/*.la $RPM_BUILD_ROOT%{_libdir}/purple-2/*.a
-rm -f $RPM_BUILD_ROOT%{_libdir}/pidgin/*.la $RPM_BUILD_ROOT%{_libdir}/pidgin/*.a
+rm -f $RPM_BUILD_ROOT%{_libdir}/purple-2/*.la
+rm -f $RPM_BUILD_ROOT%{_libdir}/pidgin/*.la
+
 %find_lang plugin_pack
 
 %clean
@@ -85,8 +86,10 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/purple-2/dewysiwygification.so
 %_libdir/purple-2/dice.so
 %_libdir/purple-2/eight_ball.so
+%_libdir/purple-2/findip.so
 %_libdir/purple-2/flip.so
 %_libdir/purple-2/google.so
+%_libdir/purple-2/groupmsg.so
 %_libdir/purple-2/highlight.so
 %_libdir/purple-2/ignore.so
 %_libdir/purple-2/irchelper.so
