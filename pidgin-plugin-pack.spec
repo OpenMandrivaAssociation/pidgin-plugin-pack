@@ -10,12 +10,15 @@ Summary:    Plugin Pack for libpurple and derived IM clients
 Name:       pidgin-plugin-pack
 Version:    %version
 
-Release:    %mkrel 1
+Release:    %mkrel 2
 License:    GPLv2+
 Group:      Networking/Instant messaging
 
 URL:        http://plugins.guifications.org/
 Source0:    %{fname}.tar.bz2
+#gw from MTN, fix very slow tab switching when switchspell is active
+#http://plugins.guifications.org/trac/ticket/520
+Patch:	    purple-plugin_pack-2.5.1-switchspell-ticket520.patch
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: intltool
 BuildRequires: python
@@ -40,6 +43,7 @@ This is a plugin for Pidgin to control the Xmms music player.
 
 %prep
 %setup -q -n %fname
+%patch -p1
 
 %build
 %configure2_5x --disable-static
