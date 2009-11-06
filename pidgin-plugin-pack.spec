@@ -1,8 +1,8 @@
 %define oname purple-plugin_pack
-%define version 2.5.1
+%define version 2.6.0
 %define fname %oname-%version
 %define pidgin_major_ver 2
-%define pidgin_minor_ver 4
+%define pidgin_minor_ver 6
 %define pidgin_next_major_ver %(echo $((%{pidgin_major_ver}+1)))
 %define pidgin_build_minor_ver %(if $([ -x %{_bindir}/pkg-config ] && pkg-config --exists pidgin); then pkg-config --modversion pidgin | awk -F. '{ print $2 }'; else echo 0; fi)
 
@@ -16,9 +16,6 @@ Group:      Networking/Instant messaging
 
 URL:        http://plugins.guifications.org/
 Source0:    %{fname}.tar.bz2
-#gw from MTN, fix very slow tab switching when switchspell is active
-#http://plugins.guifications.org/trac/ticket/520
-Patch:	    purple-plugin_pack-2.5.1-switchspell-ticket520.patch
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: intltool
 BuildRequires: python
@@ -43,7 +40,6 @@ This is a plugin for Pidgin to control the Xmms music player.
 
 %prep
 %setup -q -n %fname
-%patch -p1
 
 %build
 %configure2_5x --disable-static
@@ -107,6 +103,7 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/purple-2/slashexec.so
 %_libdir/purple-2/splitter.so
 %_libdir/purple-2/sslinfo.so
+%_libdir/purple-2/xmppprio.so
 
 %files -n pidgin-xmms
 %defattr(-,root,root,-)
