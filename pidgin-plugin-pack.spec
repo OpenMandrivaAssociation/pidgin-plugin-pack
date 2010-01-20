@@ -1,5 +1,5 @@
 %define oname purple-plugin_pack
-%define version 2.6.0
+%define version 2.6.2
 %define fname %oname-%version
 %define pidgin_major_ver 2
 %define pidgin_minor_ver 6
@@ -10,7 +10,7 @@ Summary:    Plugin Pack for libpurple and derived IM clients
 Name:       pidgin-plugin-pack
 Version:    %version
 
-Release:    %mkrel 2
+Release:    %mkrel 1
 License:    GPLv2+
 Group:      Networking/Instant messaging
 
@@ -22,6 +22,7 @@ BuildRequires: python
 BuildRequires: pidgin-devel >= %{pidgin_major_ver}.%{pidgin_minor_ver}, pidgin-devel < %{pidgin_next_major_ver}
 BuildRequires: gtk2-devel
 BuildRequires: gtkspell-devel
+BuildRequires: talkfilters-devel
 Requires:   pidgin >= %{pidgin_major_ver}.%{pidgin_build_minor_ver}, pidgin < %{pidgin_next_major_ver}
 
 
@@ -77,6 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/pidgin/plonkers.so
 %_libdir/pidgin/sepandtab.so
 %_libdir/pidgin/switchspell.so
+%_libdir/pidgin/talkfilters.so
 %_libdir/pidgin/timelog.so
 %_libdir/pidgin/xchat-chats.so
 %_libdir/purple-2/autoprofile.so
