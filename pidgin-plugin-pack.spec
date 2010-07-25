@@ -1,5 +1,5 @@
 %define oname purple-plugin_pack
-%define version 2.6.2
+%define version 2.6.3
 %define fname %oname-%version
 %define pidgin_major_ver 2
 %define pidgin_minor_ver 6
