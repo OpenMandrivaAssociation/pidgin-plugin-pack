@@ -10,7 +10,7 @@ Summary:    Plugin Pack for libpurple and derived IM clients
 Name:       pidgin-plugin-pack
 Version:    %version
 
-Release:    3
+Release:    4
 License:    GPLv2+
 Group:      Networking/Instant messaging
 
