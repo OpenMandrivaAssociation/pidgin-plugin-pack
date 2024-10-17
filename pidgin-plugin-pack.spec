@@ -14,7 +14,7 @@ Release:    4
 License:    GPLv2+
 Group:      Networking/Instant messaging
 
-URL:        http://plugins.guifications.org/
+URL:        https://plugins.guifications.org/
 Source0:    %{fname}.tar.bz2
 BuildRequires: intltool
 BuildRequires: python
