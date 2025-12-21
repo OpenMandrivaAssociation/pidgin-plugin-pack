@@ -16,6 +16,11 @@ Group:      Networking/Instant messaging
 
 URL:        https://plugins.guifications.org/
 Source0:    %{fname}.tar.bz2
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: intltool
 BuildRequires: python
 BuildRequires: pidgin-devel >= %{pidgin_major_ver}.%{pidgin_minor_ver}, pidgin-devel < %{pidgin_next_major_ver}
